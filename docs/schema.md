@@ -1,16 +1,21 @@
-### 1. Kolekcja: `postacie`
-| Pole      | Typ          | Opis                                   | Przykład                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|:----------|:-------------|:---------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`      | **ObjectId** | Id postaci                             | `ObjectId("507f1f...")`                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `imie`    | **String**   | Imie                                   | `Mała Mi`                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `opis`    | **String**   | Opis                                   | `Zaciekła i niezależna - malutka osóbka z przeogromnym charakterem! Znana ze swojego ciętego języka oraz porywczej i złośliwej natury, zdaje się prosperować w niebezpiecznych sytuacjach i czasem bawią ją małe nieszczęścia dotykające innych. Mimo to jest z niej lojalny, opiekuńczy i szczery przyjaciel, a jej odwaga sprawia, że warto ją mieć w pobliżu podczas kryzysu. Mała Mi mieszka wraz z Muminkami w Domu Muminków.` |
-| `gatunek` | **String**   | Rasa                                   | `Mimbla`                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `status`  | **Boolean**  | Czy postać aktualnie śpi snem zimowym? | `True`                                                                                                                                                                                                                                                                                                                                                                                                                              |
+### 1. Kolekcja: `characters`
+
+| Pole             | Typ          | Wymagane  | Opis                    | Przykład                   |
+|:-----------------|:-------------|:---------:|:------------------------|:---------------------------|
+| `_id`            | **ObjectId** |     ✅     | ID postaci              | `ObjectId("507f1f...")`    |
+| `name`           | **String**   |     ✅     | Imię postaci            | `Mała Mi`                  |
+| `description`    | **String**   |     ✅     | Opis charakteru         | `Zaciekła i niezależna...` |
+| `species`        | **String**   |     ✅     | Gatunek                 | `Mimbla`                   |
+| `sleepingWinter` | **Boolean**  |     ✅     | Czy śpi snem zimowym    | `true`                     |
+| `bestFriend`     | **ObjectId** |     ❌     | Referencja do Character | `ObjectId("507f1f...")`    |
 
 
-### 2. Kolekcja: `artefakty` 
-| Pole         | Typ          | Opis                      | Przykład               |
-|:-------------|:-------------|:--------------------------|:-----------------------|
-| `wlasciciel` | **ObjectId** | referencja do `Character` | `ObjectId("32f1a...")` |
-| `nazwa`      | **String**   | Nazwa artefaktu           | `Flet`                 |
-| `type`       | **String**   | Typ                       | `Instrument`           |
+### 2. Kolekcja: `artifacts`
+
+| Pole          | Typ          |  Wymagane   | Opis                                 | Przykład                  |
+|:--------------|:-------------|:-----------:|:-------------------------------------|:--------------------------|
+| `_id`         | **ObjectId** |      ✅      | ID artefaktu                         | `ObjectId("507f1f...")`   |
+| `name`        | **String**   |      ✅      | Nazwa artefaktu                      | `Flet`                    |
+| `description` | **String**   |      ✅      | Opis właściwości                     | `Zmienia rzeczy w chmury` |
+| `type`        | **String**   |      ✅      | Typ artefaktu                        | `Instrument`              |
+| `owner`       | **ObjectId** |      ✅      | Referencja do Character (właściciel) | `ObjectId("507f1f...")`   |
