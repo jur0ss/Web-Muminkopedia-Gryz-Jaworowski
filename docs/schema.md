@@ -6,3 +6,11 @@
 | `opis`    | **String**   | Opis                                   | `Zaciekła i niezależna - malutka osóbka z przeogromnym charakterem! Znana ze swojego ciętego języka oraz porywczej i złośliwej natury, zdaje się prosperować w niebezpiecznych sytuacjach i czasem bawią ją małe nieszczęścia dotykające innych. Mimo to jest z niej lojalny, opiekuńczy i szczery przyjaciel, a jej odwaga sprawia, że warto ją mieć w pobliżu podczas kryzysu. Mała Mi mieszka wraz z Muminkami w Domu Muminków.` |
 | `gatunek` | **String**   | Rasa                                   | `Mimbla`                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `status`  | **Boolean**  | Czy postać aktualnie śpi snem zimowym? | `True`                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+
+### 2. Kolekcja: `artefakty` 
+| Pole         | Typ          | Opis                      | Przykład               |
+|:-------------|:-------------|:--------------------------|:-----------------------|
+| `wlasciciel` | **ObjectId** | referencja do `Character` | `ObjectId("32f1a...")` |
+| `nazwa`      | **String**   | Nazwa artefaktu           | `Flet`                 |
+| `type`       | **String**   | Typ                       | `Instrument`           |
