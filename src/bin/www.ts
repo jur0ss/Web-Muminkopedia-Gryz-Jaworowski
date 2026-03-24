@@ -1,42 +1,19 @@
-// Module dependencies.
-
-import  app from '../app';
+import 'dotenv/config';
+import app from '../app';
 import debug from 'debug';
 import http from 'http';
+import connectDB from '../config/db';
 
-// Get port from environment and store in Express.
+
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const debugLog = debug("express-ts-mongodb:server"); // Tworzy instancję loggera
+const debugLog = debug("express-ts-mongodb:server");
 
-// Create HTTP server.
 const server = http.createServer(app);
 
-// Listen on provided port, on all network interfaces.
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
-// Normalize a port into a number, string, or false.
-function normalizePort(val: string): number | string | false {
-  const port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-// Event listener for HTTP server "error" event.
-function onError(error: NodeJS.ErrnoException) {
+function onError(error: NodeJS.ErrnoException): void {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -45,26 +22,51 @@ function onError(error: NodeJS.ErrnoException) {
       ? 'Pipe ' + port
       : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(bind + ' wymaga uprawnień administratora');
       process.exit(1);
-      break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(bind + ' jest już używany');
       process.exit(1);
-      break;
     default:
       throw error;
   }
 }
 
-// Event listener for HTTP server "listening" event.
-function onListening() {
+function onListening(): void {
   const addr = server.address();
   const bind = typeof addr === 'string'
       ? 'pipe ' + addr
       : 'port ' + addr?.port;
-  debug('Listening on ' + bind);
+
+  debugLog('Listening on ' + bind);
+  console.log(`🚀 Serwer działa na ${bind}`);
+}
+
+// --- start aplikacji ---
+
+const start = async () => {
+  try {
+    await connectDB();
+
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', onListening);
+
+  } catch (error) {
+    console.error("🔴 Krytyczny błąd podczas uruchamiania aplikacji:", error);
+    process.exit(1);
+  }
+};
+
+start();
+
+// --- normalizePort ---
+
+function normalizePort(val: string): number | string | false {
+  const port = parseInt(val, 10);
+  if (isNaN(port)) return val;
+  if (port >= 0) return port;
+  return false;
 }
