@@ -2,12 +2,12 @@
   {
     "name": "Muminek",
     "description": "Główny bohater sagi, mały, biały troll z dużym sercem. Miłośnik przygód, przyjaciół i nowych doświadczeń.",
-    "species": "Troll",
+    "species": "Muminek",
     "sleepingWinter": true,
-    "bestFriendName": "Sniff"
+    "bestFriendName": "Ryjek"
   },
   {
-    "name": "Sniff",
+    "name": "Ryjek",
     "description": "Wędrownik, muzyk i przyjaciel Muminka. Miłośnik wolności i przyrody. Gra na harmonijce i śpiewa smutne piosenki.",
     "species": "Stwór",
     "sleepingWinter": false,
@@ -16,44 +16,23 @@
   {
     "name": "Mała Mi",
     "description": "Mała, dzielna i bezczelna dziewczyna. Nie ma strachu i zawsze mówi to, co myśli. Niezwykle sprytna i samodzielna.",
-    "species": "Stwór",
+    "species": "Mimbla",
     "sleepingWinter": false,
     "bestFriendName": null
   },
   {
     "name": "Mama Muminka",
     "description": "Matka Muminka, opiekuńcza, mądra i praktyczna. Serce rodziny, zawsze dba o wszystkich wokół siebie.",
-    "species": "Troll",
+    "species": "Muminek",
     "sleepingWinter": true,
     "bestFriendName": "Papa Muminka"
   },
   {
-    "name": "Papa Muminka",
+    "name": "Tata Muminek",
     "description": "Ojciec Muminka, przygodowiec i opowiadacz. Pełen niesamowitych historii z przeszłości i szukający nowych przygód.",
-    "species": "Troll",
+    "species": "Muminek",
     "sleepingWinter": true,
     "bestFriendName": "Mama Muminka"
-  },
-  {
-    "name": "Hemulen",
-    "description": "Kolekcjoner i miłośnik porządku. Zawsze szuka nowych rzeczy do swojej kolekcji. Bardzo drobiazgowy i wymagający.",
-    "species": "Hemulen",
-    "sleepingWinter": false,
-    "bestFriendName": null
-  },
-  {
-    "name": "Hemulak",
-    "description": "Wielki i czuły stwór. Wyglądająco straszny ale bardzo miły. Czasami niezaradny ale zawsze chętny do pomocy.",
-    "species": "Stwór",
-    "sleepingWinter": true,
-    "bestFriendName": "Muminek"
-  },
-  {
-    "name": "Maa",
-    "description": "Mądra i niezawisła dziewczyna. Opiekuje się zwierzętami i roślinami. Poważna i skoncentrowana na swoich celach.",
-    "species": "Stwór",
-    "sleepingWinter": false,
-    "bestFriendName": null
   },
   {
     "name": "Groka",
@@ -65,7 +44,7 @@
   {
     "name": "Hatifnatowie",
     "description": "Dziwne, elektryczne stworza. Są milczące i zawsze poruszają się w skupiskach. Pojawią się i znikają bez ostrzeżenia.",
-    "species": "Hatifnaci",
+    "species": "Hatifnat",
     "sleepingWinter": false,
     "bestFriendName": null
   }

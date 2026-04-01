@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Harmonijka Ryjka",
+    "description": "Magiczna harmonijka, która gra smutne i piękne melodie. Jej dźwięki potrafią zmienić nastrój każdego słuchacza.",
+    "magicEffect": "Zmienia emocje słuchaczy",
+    "owner": "Ryjek"
+  },
+  {
+    "name": "Talizman Muminka",
+    "description": "Mały, drewniany talizman w kształcie serca. Chroni Muminka w niebezpiecznych sytuacjach i daje mu odwagę.",
+    "magicEffect": "Chroni i dodaje odwagi",
+    "owner": "Muminek"
+  },
+  {
+    "name": "Lampa Mamy Muminka",
+    "description": "Stara, drewniana lampa olejowa, która zawsze świeci w domku Muminków. Daje ciepło i bezpieczeństwo.",
+    "magicEffect": "Przyciąga każdego do domu",
+    "owner": "Mama Muminka"
+  },
+  {
+    "name": "Różdżka Małej Mi",
+    "description": "Magiczna różdżka, którą nosi przy sobie mała Mi. Służy jej do różnych psików i sztuczek.",
+    "magicEffect": "Tworzy efekty magiczne i zamieszanie",
+    "owner": "Mała Mi"
+  },
+  {
+    "name": "Książka Przygód Tatusia",
+    "description": "Stara, podróżna książka pełna zapisków z przygód Tatusia Muminka. Każda strona kryje nową opowieść.",
+    "magicEffect": "Otwiera umysły na przygody i marzenia",
+    "owner": "Tata Muminek"
+  }
+]
