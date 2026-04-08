@@ -71,5 +71,23 @@ export async function putCharacter(req: Request, res: Response): Promise<void> {
 export async function deleteCharacter(req: Request, res: Response): Promise<void> {
     try {
         const id = req.params.id as string;
-        const deletedCharacter = await removeCharacter
+
+        const deletedCharacter = await removeCharacter(id);
+
+        res.json({
+            message: "Usunięto postać",
+            character: deletedCharacter
+        });
+
+    } catch (err) {
+        const error = err instanceof Error ? err : new Error("Unknown error");
+
+        if (error.message === "Character not found") {
+            res.status(404).json({ error: error.message });
+        } else {
+            res.status(500).json({
+                error: `Nie udało się usunąć postaci: ${error.message}`
+            });
+        }
     }
+}
