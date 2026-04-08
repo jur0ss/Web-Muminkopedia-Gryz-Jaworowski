@@ -1,37 +1,32 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, model, Document, Types } from "mongoose";
 
 export interface Artifact extends Document {
     name: string;
     description: string;
     type: string;
-    owner?: mongoose.Types.ObjectId;
-    createdAt: Date;
-    updatedAt: Date;
+    owner: Types.ObjectId; // poprawne powiązanie z Character
 }
 
 const ArtifactSchema = new Schema<Artifact>({
     name: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
     description: {
         type: String,
-        required: true,
-        trim: true,
+        required: true
     },
     type: {
         type: String,
         required: true,
-        trim: true,
+        trim: true
     },
     owner: {
         type: Schema.Types.ObjectId,
         ref: "Character",
-        required: false,
-    },
-}, {
-    timestamps: true,
+        required: true
+    }
 });
 
-export default mongoose.model<Artifact>("Artifact", ArtifactSchema);
+export default model<Artifact>("Artifact", ArtifactSchema);
