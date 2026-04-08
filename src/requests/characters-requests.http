@@ -1,0 +1,29 @@
+@baseUrl = http://localhost:3000
+
+### Pobierz wszystkie postacie
+GET {{baseUrl}}/characters
+Accept: application/json
+
+### Dodawanie postaci
+POST {{baseUrl}}/characters
+Content-Type: application/json
+
+{
+  "name": "Migotek",
+  "description": "biały muminek",
+  "species": "Muminek",
+  "sleepingWinter": true,
+  "bestFriend": ""
+}
+
+### Aktualizacja
+PUT {{baseUrl}}/characters/
+Content-Type: application/json
+
+{
+  "name": "Migotek",
+  "description": "biały muminek",
+  "species": "Muminek",
+  "sleepingWinter": true,
+  "bestFriend": "Muminek"
+}
